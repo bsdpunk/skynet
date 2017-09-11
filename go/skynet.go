@@ -22,7 +22,7 @@ func skynet(c chan int, num int, size int, div int) {
 }
 
 func main() {
-	c := make(chan int)
+	c := make(chan int, 1000000)
 	start := time.Now()
 	go skynet(c, 0, 1000000, 10)
 	result := <-c
